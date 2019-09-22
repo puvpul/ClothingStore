@@ -12,10 +12,11 @@ namespace ClothingStore.Api.Controllers
 {
     public class CatalougeController : ApiController
     {
+        //implementing ninject DI
         private ICatalougeRepository Repository { get; set; }
-        public CatalougeController()
+        public CatalougeController(ICatalougeRepository catRepoImpl)
         {
-            Repository = new CatalougeRepository();
+            Repository = catRepoImpl;
         }
         public IEnumerable<Product> GetProducts()
         {

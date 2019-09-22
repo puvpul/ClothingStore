@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using ClothingStore.Api.Infrastructure;
 
 namespace ClothingStore.Api
 {
@@ -10,7 +11,7 @@ namespace ClothingStore.Api
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
-
+            config.DependencyResolver = new NinjectResolver();
             // Web API routes
             config.MapHttpAttributeRoutes();
 
