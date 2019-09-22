@@ -1,0 +1,14 @@
+1. create Empty solution in Visual studio
+2. add empty project and select only webapi from the tickbox
+3. after that add model required for the project. at this moment we are going to add category, product, order and orderline 
+4. Creating the repository for the project and add Interface ICatalouge and IOrderRepository
+5. Add Dbcontext to persist to database like sql server
+6. Use Code first migrations to create database
+7. Seed the database and seed for newly created tables
+8. after seed data has been added to configuration class run update-database command 
+9. After we start to write repository .. start with catlouge repository as catlouge is first UI page 
+site will serve
+10. Add Ninject dependency resolver to instantiate the repository without creating an instance of it in the 
+controller class.
+11.
+
