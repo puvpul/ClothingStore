@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -144,13 +145,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\NinjectResolver.cs" />
-    <Compile Include="Migrations\201909200223349_initial.cs" />
-    <Compile Include="Migrations\201909200223349_initial.Designer.cs">
-      <DependentUpon>201909200223349_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909200642154_addcategoryidToProduct.cs" />
-    <Compile Include="Migrations\201909200642154_addcategoryidToProduct.Designer.cs">
-      <DependentUpon>201909200642154_addcategoryidToProduct.cs</DependentUpon>
+    <Compile Include="Migrations\202004040453413_initial.cs" />
+    <Compile Include="Migrations\202004040453413_initial.Designer.cs">
+      <DependentUpon>202004040453413_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
@@ -175,11 +172,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201909200223349_initial.resx">
-      <DependentUpon>201909200223349_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909200642154_addcategoryidToProduct.resx">
-      <DependentUpon>201909200642154_addcategoryidToProduct.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004040453413_initial.resx">
+      <DependentUpon>202004040453413_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

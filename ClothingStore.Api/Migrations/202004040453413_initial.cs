@@ -11,36 +11,40 @@ namespace ClothingStore.Api.Migrations
                 "dbo.Categories",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        CategoryId = c.Int(nullable: false, identity: true),
                         Name = c.String(),
                         Description = c.String(),
+                        ImageUrl = c.String(),
+                        CreatedDate = c.DateTime(nullable: false),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.CategoryId);
             
             CreateTable(
                 "dbo.Products",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        ProductId = c.Int(nullable: false, identity: true),
                         Name = c.String(),
                         Description = c.String(),
                         Price = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        Category_Id = c.Int(),
+                        ImageUrl = c.String(),
+                        CreatedDate = c.DateTime(nullable: false),
+                        CategoryId = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Categories", t => t.Category_Id)
-                .Index(t => t.Category_Id);
+                .PrimaryKey(t => t.ProductId)
+                .ForeignKey("dbo.Categories", t => t.CategoryId, cascadeDelete: true)
+                .Index(t => t.CategoryId);
             
             CreateTable(
                 "dbo.OrderLines",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        OrderLineId = c.Int(nullable: false, identity: true),
                         Count = c.Int(nullable: false),
                         ProductId = c.Int(nullable: false),
                         OrderId = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.Id)
+                .PrimaryKey(t => t.OrderLineId)
                 .ForeignKey("dbo.Orders", t => t.OrderId, cascadeDelete: true)
                 .ForeignKey("dbo.Products", t => t.ProductId, cascadeDelete: true)
                 .Index(t => t.ProductId)
@@ -50,11 +54,11 @@ namespace ClothingStore.Api.Migrations
                 "dbo.Orders",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        OrderId = c.Int(nullable: false, identity: true),
                         Customer = c.String(),
                         TotalCost = c.Decimal(nullable: false, precision: 18, scale: 2),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.OrderId);
             
         }
         
@@ -62,10 +66,10 @@ namespace ClothingStore.Api.Migrations
         {
             DropForeignKey("dbo.OrderLines", "ProductId", "dbo.Products");
             DropForeignKey("dbo.OrderLines", "OrderId", "dbo.Orders");
-            DropForeignKey("dbo.Products", "Category_Id", "dbo.Categories");
+            DropForeignKey("dbo.Products", "CategoryId", "dbo.Categories");
             DropIndex("dbo.OrderLines", new[] { "OrderId" });
             DropIndex("dbo.OrderLines", new[] { "ProductId" });
-            DropIndex("dbo.Products", new[] { "Category_Id" });
+            DropIndex("dbo.Products", new[] { "CategoryId" });
             DropTable("dbo.Orders");
             DropTable("dbo.OrderLines");
             DropTable("dbo.Products");

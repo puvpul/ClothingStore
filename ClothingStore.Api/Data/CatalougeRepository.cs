@@ -31,13 +31,13 @@ namespace ClothingStore.Api.Data
 
         public async Task<int> SaveProductAsync(Product product)
         {
-            if (product.Id == 0)
+            if (product.ProductId == 0)
             {
                 context.Products.Add(product);
             }
             else
             {
-                Product dbProduct = context.Products.Find(product.Id);
+                Product dbProduct = context.Products.Find(product.ProductId);
                 if (dbProduct !=null)
                 {
                     dbProduct.Name = product.Name;
@@ -50,11 +50,11 @@ namespace ClothingStore.Api.Data
         }
         public async Task<int> SaveCategoriesAsync(Category category)
         {
-            if (category.Id == 0)
+            if (category.CategoryId == 0)
                 context.Categories.Add(category);
             else
             {
-                Category dbCategory = context.Categories.Find(category.Id);
+                Category dbCategory = context.Categories.Find(category.CategoryId);
                 if (dbCategory != null)
                 {
                     dbCategory.Name = category.Name;

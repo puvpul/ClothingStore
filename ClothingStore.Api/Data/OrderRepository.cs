@@ -19,7 +19,7 @@ namespace ClothingStore.Api.Data
         }
         public async Task<int> SaveOrderAsync(Order order)
         {
-            if (order.Id==0)
+            if (order.OrderId==0)
             {
                 context.Orders.Add(order);
             }

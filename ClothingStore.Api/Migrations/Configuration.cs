@@ -22,28 +22,30 @@ namespace ClothingStore.Api.Migrations
             //  to avoid creating duplicate seed data.
             //new List<Category>
             //{
-            //    new Category { Name= "Shirts", Description="Formal shirts" },
-            //    new Category { Name= "TShirts", Description="T shirts" },
-            //    new Category { Name= "Denim", Description="Denim for male" },
-            //    new Category { Name= "Kids", Description="Kids Items" },
-            //    new Category { Name= "Male Gabardine", Description="Rough gabardine for men" },
-            //    new Category { Name= "Male Trousers", Description="Comfortable pure cotton trousers" }
+            //    new Category { Name= "Shirts", Description="Formal shirts" , CreatedDate=System.DateTime.Today},
+            //    new Category { Name= "TShirts", Description="T shirts", CreatedDate=System.DateTime.Today },
+            //    new Category { Name= "Denim", Description="Denim for male", CreatedDate=System.DateTime.Today },
+            //    new Category { Name= "Kids", Description="Kids Items", CreatedDate=System.DateTime.Today },
+            //    new Category { Name= "Male Gabardine", Description="Rough gabardine for men", CreatedDate=System.DateTime.Today },
+            //    new Category { Name= "Male Trousers", Description="Comfortable pure cotton trousers", CreatedDate=System.DateTime.Today }
+
             //}.ForEach(cat => context.Categories.AddOrUpdate(cat));
 
             //context.SaveChanges();
 
             //new List<Product>
             //{
-            //    new Product {Name="Male Business Shirts", Description="Shirts for Business", Price=7.99m, CategoryId=1 },
-            //    new Product {Name="Male T Shirts", Description="TShirts for regular use ", Price=1.99m, CategoryId=2 },
-            //    new Product {Name="Male Denim", Description="Stylish denims for men", Price=9.99m, CategoryId= 3},
-            //    new Product {Name="Male Gabardin", Description="gabardine denim", Price=5.99m, CategoryId=5 },
-            //    new Product {Name="Male Trousers", Description="Shirts for Business", Price=2.99m, CategoryId=6 },
-            //    new Product {Name="Kids Shirts", Description="Shirts for Kids", Price=7.99m, CategoryId=4 },
-            //    new Product {Name="Kids T Shirts", Description="TShirts for kids regular use ", Price=1.99m, CategoryId=4 },
-            //    new Product {Name="Kids Denim", Description="denims for kids", Price=9.99m, CategoryId=4 },
-            //    new Product {Name="Kids Gabardin", Description="gabardine denim", Price=5.99m, CategoryId=4 },
-            //    new Product {Name="kids trousers", Description="kids", Price=2.99m, CategoryId=4 },
+            //    new Product {Name="Male Business Shirts", Description="Shirts for Business", Price=7.99m, CategoryId=1, CreatedDate=System.DateTime.Today },
+            //    new Product {Name="Male T Shirts", Description="TShirts for regular use", Price=1.99m, CategoryId=2, CreatedDate=System.DateTime.Today },
+            //    new Product {Name="Male Denim", Description="Stylish denims for men", Price=9.99m, CategoryId= 3, CreatedDate=System.DateTime.Today},
+            //    new Product {Name="Male Gabardin", Description="gabardine denim", Price=5.99m, CategoryId=5, CreatedDate=System.DateTime.Today },
+            //    new Product {Name="Male Trousers", Description="Shirts for Business", Price=2.99m, CategoryId=6, CreatedDate=System.DateTime.Today },
+            //    new Product {Name="Kids Shirts", Description="Shirts for Kids", Price=7.99m, CategoryId=4, CreatedDate=System.DateTime.Today },
+            //    new Product {Name="Kids T Shirts", Description="TShirts for kids regular use ", Price=1.99m, CategoryId=4, CreatedDate=System.DateTime.Today },
+            //    new Product {Name="Kids Denim", Description="denims for kids", Price=9.99m, CategoryId=4, CreatedDate=System.DateTime.Today },
+            //    new Product {Name="Kids Gabardin", Description="gabardine denim", Price=5.99m, CategoryId=4, CreatedDate=System.DateTime.Today },
+            //    new Product {Name="kids trousers", Description="kids", Price=2.99m, CategoryId=4, CreatedDate=System.DateTime.Today }
+
             //}.ForEach(p => context.Products.AddOrUpdate(p));
 
             //context.SaveChanges();

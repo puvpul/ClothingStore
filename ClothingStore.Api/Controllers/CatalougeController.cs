@@ -24,7 +24,7 @@ namespace ClothingStore.Api.Controllers
         }
         public Product GetProduct(int id)
         {
-            return Repository.Products.Where(p => p.Id == id).FirstOrDefault();
+            return Repository.Products.Where(p => p.ProductId == id).FirstOrDefault();
         }
         public IEnumerable<Category> GetCategories()
         {
